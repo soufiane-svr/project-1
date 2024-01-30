@@ -31,7 +31,17 @@ app.get('/users', async (req, res) => {
   });
   
 
-app.listen (3000,()=>{
-    console.log('hello world');
+app.get('/article', async (req,res)=> {
+ 
+  const Post = await UserModel.find()
+  res.render('articles.ejs',{
+    Allarticle : Post
+  })
+})
+
+
+
+app.listen (3001,()=>{
+    console.log('hello world im here');
 })
 
