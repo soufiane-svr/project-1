@@ -19,11 +19,17 @@ app.get('/',(req,res)=>{
 
 const UserModel = require('./models/Users')
 
-app.get('/Users' , async(req,res)=>{
-   const User = await UserModel.find()
-   res.json(User)
-})
-
+app.get('/users', async (req, res) => {
+    try {
+      const users = await UserModel.find();
+      res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // تعيين النطاق الذي يُسمح له بالوصول
+      res.json(users);
+    } catch (error) {
+      console.error('Error fetching users:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+  
 
 app.listen (3000,()=>{
     console.log('hello world');
