@@ -1,7 +1,7 @@
 const express = require ('express')
 const  mongoose = require('mongoose')
 const app = express()
-
+const cors = require('cors')
 mongoose.connect('mongodb+srv://soufiane:Sousou12@cluster0.5ij9nvy.mongodb.net/mernproject?retryWrites=true&w=majority')
 .then(()=>{
     console.log('connected db')
@@ -9,6 +9,9 @@ mongoose.connect('mongodb+srv://soufiane:Sousou12@cluster0.5ij9nvy.mongodb.net/m
     console.log('Error connecting to tkkmsshe database:', error);
  });
 
+ app.use(cors({
+    origin  : 'http://localhost:3000/'
+ }))
 
 app.get('/',(req,res)=>{
     res.send('hello world')
