@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+    }
+</style>
+<body>
+    <h1>
+        al article page
+    </h1>
+    <hr>
+    <div style="background-color: orange;">
+        <% for(art of Allarticle ) { %>
+            <h1>
+                <span style="background-color: rgb(255, 255, 255);">name</span> :<%=art.name%>
+            </h1>
+            <p>
+                <span style="background-color: rgb(255, 255, 255);">age     </span> :  <%= art.age%>
+            </p>
+            <p>
+                <span style="background-color: rgb(255, 255, 255);">email    </span> :<%=art.email%>
+            </p>
+            <hr>
+        <% } %>
+    </div>
+</body>
+</html>
