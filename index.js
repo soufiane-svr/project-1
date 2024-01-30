@@ -22,7 +22,7 @@ const UserModel = require('./models/Users')
 app.get('/users', async (req, res) => {
     try {
       const users = await UserModel.find();
-      res.header('Access-Control-Allow-Origin', 'http://localhost:3000'); // تعيين النطاق الذي يُسمح له بالوصول
+      res.header('Access-Control-Allow-Origin', 'https://project-1-rcf8.onrender.com/'); // تعيين النطاق الذي يُسمح له بالوصول
       res.json(users);
     } catch (error) {
       console.error('Error fetching users:', error);
